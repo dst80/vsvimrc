@@ -62,15 +62,13 @@ nnoremap <leader><CR> :nohlsearch<cr>
 " nnoremap <leader>gf :vsc ReSharper.ReSharper_GotoFile<cr>
 " nnoremap <leader>gt :vsc ReSharper.ReSharper_GotoType<cr>
 " nnoremap <leader>gt :vsc ReSharper.ReSharper_GotoTypeDefinition<cr>
+" nnoremap <leader>sf :vsc Resharper.Resharper_SwitchHeaderSource<cr>
 
 " refactor
-" nnoremap crr        :vsc ReSharper.ReSharper_RefactorThis<cr>
-" xnoremap <c-r><c-r> :vsc ReSharper.ReSharper_RefactorThis<cr>
+" nnoremap <leader>rt :vsc ReSharper.ReSharper_RefactorThis<cr>
+" xnoremap <c-r><c-t> :vsc ReSharper.ReSharper_RefactorThis<cr>
 " nnoremap <bs>       :vsc ReSharper_AltEnter<cr>
 " xnoremap <bs>       :vsc ReSharper_AltEnter<cr>
-
-
-
 
 " No Resharper ----------------------------------------------------
 
