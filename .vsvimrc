@@ -1,0 +1,93 @@
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+set number 
+set relativenumber
+
+set cursorline 
+
+set tabstop=4
+set shiftwidth=4
+
+set backspace=eol,start,indent
+
+set nostartofline
+set autoindent
+set expandtab
+set ttimeout
+set ttimeoutlen=20
+
+let mapleader = " "
+
+
+" General Section -------------------------------------------------
+
+" Window navigation
+
+nnoremap <leader>wf :vsc FullScreen<cr>
+nnoremap <leader>wc :vsc Window.CloseDocumentWindow<cr>
+nnoremap <leader>wj :vsc Window.NextDocumentWindow<cr>
+nnoremap <leader>wk :vsc Window.PreviousDocumentWindow<cr>
+
+nnoremap <c-w><c-f> :vsc FullScreen<cr>
+nnoremap <c-w><c-c> :vsc Window.CloseDocumentWindow<cr>
+nnoremap <c-w><c-j> :vsc Window.NextDocumentWindow<cr>
+nnoremap <c-w><c-k> :vsc Window.PreviousDocumentWindow<cr>
+
+
+xnoremap <leader>sw :vsc Edit.SurroundWith<cr>
+nnoremap <leader>sw :vsc Edit.SurroundWith<cr>
+nnoremap <leader>is :vsc Edit.InsertSnippet<cr>
+
+nnoremap <leader>cc V:vsc Edit.CommentSelection<cr>
+xnoremap <leader>cc :vsc Edit.CommentSelection<cr>
+nnoremap <leader>CC V:vsc Edit.UncommentSelection<cr>
+xnoremap <leader>CC :vsc Edit.UncommentSelection<cr>
+
+nnoremap <leader>ff : vsc Window.SolutionExplorerSearch<cr>
+nnoremap <leader>fif : vsc Edit.FindInFiles<cr>
+nnoremap <leader>r :%s/
+nnoremap <leader>rf :vsc Edit.Replace<cr>
+nnoremap <leader><CR> :nohlsearch<cr>
+
+
+" Resharper -------------------------------------------------------
+
+" Goto Commands
+" nnoremap <leader>gd :vsc ReSharper.ReSharper_GotoTypeDeclaration<cr>
+" nnoremap <leader>gdd :vsc ReSharper.ReSharper_GotoDefinition<cr>
+" nnoremap <leader>gi :vsc ReSharper.ReSharper_GotoImplementation<cr>
+" nnoremap <leader>gf :vsc ReSharper.ReSharper_GotoFile<cr>
+" nnoremap <leader>gt :vsc ReSharper.ReSharper_GotoType<cr>
+" nnoremap <leader>gt :vsc ReSharper.ReSharper_GotoTypeDefinition<cr>
+
+" refactor
+" nnoremap crr        :vsc ReSharper.ReSharper_RefactorThis<cr>
+" xnoremap <c-r><c-r> :vsc ReSharper.ReSharper_RefactorThis<cr>
+" nnoremap <bs>       :vsc ReSharper_AltEnter<cr>
+" xnoremap <bs>       :vsc ReSharper_AltEnter<cr>
+
+
+
+
+" No Resharper ----------------------------------------------------
+
+" Goto Commands
+nnoremap <leader>gd :vsc Edit.GotoDeclaration<cr>
+nnoremap <leader>gdd :vsc Edit.GotoDefinition<cr>
+nnoremap <leader>gi :vsc Edit.GoToImplementation<cr>
+nnoremap <leader>gf :vsc Edit.GoToFile<cr>
+nnoremap <leader>gt :vsc Edit.GoToType<cr>
+nnoremap <leader>gt :vsc Edit.GotoTypeDefinition<cr>
+
+" refactor
+nnoremap <leader>rr :vsc Refactor.Rename<cr>
+xnoremap <leader>rr :vsc Refactor.Rename<cr>
+xnoremap <leader>rem :vsc Refactor.ExtractMethod<cr>
+xnoremap <leader>rem :vsc Refactor.ExtractMethod<cr>
+xnoremap <leader>rrp :vsc Refactor.RemoveParameters<cr>
+xnoremap <leader>rrp :vsc Refactor.RemoveParameters<cr>
+xnoremap <leader>rop :vsc Refactor.ReorderParameter<scr>
+xnoremap <leader>rop :vsc Refactor.ReorderParameters<cr>
