@@ -55,20 +55,9 @@ nnoremap <leader><CR> :nohlsearch<cr>
 
 " Resharper -------------------------------------------------------
 
-" Goto Commands
-" nnoremap <leader>gd :vsc ReSharper.ReSharper_GotoTypeDeclaration<cr>
-" nnoremap <leader>gdd :vsc ReSharper.ReSharper_GotoDefinition<cr>
-" nnoremap <leader>gi :vsc ReSharper.ReSharper_GotoImplementation<cr>
-" nnoremap <leader>gf :vsc ReSharper.ReSharper_GotoFile<cr>
-" nnoremap <leader>gt :vsc ReSharper.ReSharper_GotoType<cr>
-" nnoremap <leader>gt :vsc ReSharper.ReSharper_GotoTypeDefinition<cr>
-" nnoremap <leader>sf :vsc Resharper.Resharper_SwitchHeaderSource<cr>
-
 " refactor
-" nnoremap <leader>rt :vsc ReSharper.ReSharper_RefactorThis<cr>
-" xnoremap <c-r><c-t> :vsc ReSharper.ReSharper_RefactorThis<cr>
-" nnoremap <bs>       :vsc ReSharper_AltEnter<cr>
-" xnoremap <bs>       :vsc ReSharper_AltEnter<cr>
+nnoremap <leader>rt :vsc ReSharper.ReSharper_RefactorThis<cr>
+xnoremap <c-r><c-t> :vsc ReSharper.ReSharper_RefactorThis<cr>
 
 " No Resharper ----------------------------------------------------
 
@@ -79,6 +68,7 @@ nnoremap <leader>gi :vsc Edit.GoToImplementation<cr>
 nnoremap <leader>gf :vsc Edit.GoToFile<cr>
 nnoremap <leader>gt :vsc Edit.GoToType<cr>
 nnoremap <leader>gt :vsc Edit.GotoTypeDefinition<cr>
+nnoremap <leader>sf :vsc EditorContextMenus.CodeWindow.ToggleHeaderCodeFile<cr>
 
 " refactor
 nnoremap <leader>rr :vsc Refactor.Rename<cr>
