@@ -52,6 +52,15 @@ nnoremap <leader>r :%s/
 nnoremap <leader>rf :vsc Edit.Replace<cr>
 nnoremap <leader><CR> :nohlsearch<cr>
 
+" Save File shortcut to avoid ^S
+nnoremap <c-s> :w<cr>
+xnoremap <c-s> :w<cr>
+inoremap <c-s> <Esc>:w<cr>
+
+" Force to work in normal mode in VS
+inoremap <silent> <Up> <Esc><Up>
+inoremap <silent> <Down> <Esc><Down>
+
 
 " Resharper -------------------------------------------------------
 
