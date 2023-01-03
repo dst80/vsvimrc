@@ -1,12 +1,12 @@
 set ignorecase
 set smartcase
 set incsearch
-set hlsearch
+set nohlsearch
 
-set number 
+set number
 set relativenumber
 
-set cursorline 
+set cursorline
 
 set tabstop=4
 set shiftwidth=4
@@ -17,12 +17,79 @@ set nostartofline
 set autoindent
 set expandtab
 set ttimeout
-set ttimeoutlen=20
+set ttimeoutlen=50
+
+set magic
 
 let mapleader = " "
 
 
-" General Section -------------------------------------------------
+" General Section " -----------------------------------------------
+
+" system keymap cannot be deleted, hence overriding
+nnoremap <silent> <F1> <nop>
+inoremap <silent> <F1> <nop>
+vnoremap <silent> <F1> <nop>
+nnoremap <silent> <C-j> <nop>
+inoremap <silent> <C-j> <nop>
+vnoremap <silent> <C-j> <nop>
+nnoremap <silent> <C-k> <nop>
+inoremap <silent> <C-k> <nop>
+vnoremap <silent> <C-k> <nop>
+nnoremap <silent> Q <nop>
+nnoremap <silent> q <nop>
+
+" faster escape exit
+inoremap <silent> jj <Esc>
+inoremap <silent> kk <Esc>
+
+
+" fix weird behavior of PageUp and PageDown
+nnoremap <silent> <PageUp> <C-u>zz
+nnoremap <silent> <PageDown> <C-d>zz
+
+"  keeps cursor on the front
+nnoremap <silent> J mzJ`z
+
+"  move half page to center of the screen
+nnoremap <silent> <C-d> <C-d>zz
+nnoremap <silent> <C-u> <C-u>zz
+
+" centers cursor on search
+nnoremap <silent> n nzzzv
+nnoremap <silent> N Nzzzv
+
+" line mover commands
+nnoremap <silent> <A-Down> :m .+1<CR>==
+nnoremap <silent> <A-Up> :m .-2<CR>==
+
+inoremap <silent> <A-Down><ESC>:m .+1<CR>==gi
+inoremap <silent> <A-Up> <ESC>:m .-2<CR>==gi
+
+vnoremap <silent> <A-Down> :m '>+1<CR>gv=gv
+vnoremap <silent> <A-Up> :m '<-2<CR>gv=gv
+
+" simpler copy and paste commands
+vnoremap <silent> p "_dP
+nnoremap <silent> <leader>p "+p
+vnoremap <silent> <leader>p "+p
+nnoremap <silent> <leader>P "+P
+vnoremap <silent> <leader>P "+P
+nnoremap <silent> <leader>y "+y
+vnoremap <silent> <leader>y "+y
+nnoremap <silent> <leader>Y "+y$
+vnoremap <silent> <leader>Y "+y$
+nnoremap <silent> <leader>d "_d
+vnoremap <silent> <leader>d "_d
+
+" easier indent in visual mode, because it will stay in indent mode
+vnoremap <silent> < <gv
+vnoremap <silent> > >gv
+
+" addtional useful commands
+nnoremap <silent> <leader>e /_<CR>l:noh<CR>:let @/=""<CR>
+nnoremap <silent> <leader>m ct_ options)
+nnoremap <silent> <leader>w /[A-Z]<CR>:noh<CR>:let @/=""<CR>
 
 " Window navigation
 
@@ -52,36 +119,31 @@ nnoremap <leader>r :%s/
 nnoremap <leader>rf :vsc Edit.Replace<cr>
 nnoremap <leader><CR> :nohlsearch<cr>
 
-" Save File shortcut to avoid ^S
-nnoremap <c-s> :w<cr>
-xnoremap <c-s> :w<cr>
-inoremap <c-s> <Esc>:w<cr>
-
 " Force to work in normal mode in VS
 inoremap <silent> <Up> <Esc><Up>
 inoremap <silent> <Down> <Esc><Down>
 
 
-" Resharper -------------------------------------------------------
+" Resharper " -----------------------------------------------------
 
 " refactor
 nnoremap <leader>rt :vsc ReSharper.ReSharper_RefactorThis<cr>
 xnoremap <c-r><c-t> :vsc ReSharper.ReSharper_RefactorThis<cr>
 
-" No Resharper ----------------------------------------------------
+" No Resharper " --------------------------------------------------
 
 " Goto Commands
-nnoremap <leader>gd :vsc Edit.GotoDeclaration<cr>
-nnoremap <leader>gdd :vsc Edit.GotoDefinition<cr>
-nnoremap <leader>gi :vsc Edit.GoToImplementation<cr>
-nnoremap <leader>gf :vsc Edit.GoToFile<cr>
-nnoremap <leader>gt :vsc Edit.GoToType<cr>
-nnoremap <leader>gt :vsc Edit.GotoTypeDefinition<cr>
+nnoremap gd :vsc Edit.GotoDeclaration<cr>
+nnoremap gdd :vsc Edit.GotoDefinition<cr>
+nnoremap gi :vsc Edit.GoToImplementation<cr>
+nnoremap gf :vsc Edit.GoToFile<cr>
+nnoremap gt :vsc Edit.GoToType<cr>
+nnoremap gT :vsc Edit.GotoTypeDefinition<cr>
 nnoremap <leader>sf :vsc EditorContextMenus.CodeWindow.ToggleHeaderCodeFile<cr>
 
 " refactor
-nnoremap <leader>rr :vsc Refactor.Rename<cr>
-xnoremap <leader>rr :vsc Refactor.Rename<cr>
+nnoremap <leader>rn :vsc Refactor.Rename<cr>
+xnoremap <leader>rn :vsc Refactor.Rename<cr>
 xnoremap <leader>rem :vsc Refactor.ExtractMethod<cr>
 xnoremap <leader>rem :vsc Refactor.ExtractMethod<cr>
 xnoremap <leader>rrp :vsc Refactor.RemoveParameters<cr>
